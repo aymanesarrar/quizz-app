@@ -1,5 +1,6 @@
 import {ChakraProvider} from '@chakra-ui/react'
 import {extendTheme} from '@chakra-ui/react'
+import "@fontsource/poppins";
 
 const colors = {
   brand: {
@@ -14,7 +15,7 @@ const colors = {
 }
 const fonts = {
   heading: 'Open Sans, sans-serif',
-  body: 'Raleway, sans-serif',
+  body: 'Poppins, sans-serif',
 }
 const theme = extendTheme({colors, fonts});
 function MyApp({ Component, pageProps }) {
