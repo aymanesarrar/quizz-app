@@ -10,9 +10,7 @@ export default function Home() {
   return (
     <div>
       <PageHead pageName="Quizz App"/>
-      <Layout>
         <Game />
-      </Layout>
     </div>
   )
 }
