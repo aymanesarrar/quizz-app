@@ -4,13 +4,14 @@ import { Card } from '../components/Card'
 import Layout from '../components/Layout'
 import PageHead from '../components/PageHead'
 import styles from '../styles/Home.module.css'
+import { Game } from '../components/Game'
 
 export default function Home() {
   return (
     <div>
       <PageHead pageName="Quizz App"/>
       <Layout>
-        <Card />
+        <Game />
       </Layout>
     </div>
   )
