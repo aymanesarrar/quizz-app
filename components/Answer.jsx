@@ -28,6 +28,7 @@ const Answer = ({ answer, cap }) => {
       borderWidth="2px"
       padding="1rem"
       cursor={correct == 0 ? "pointer" : "default"}
+	  _active={{}}
       _hover={
         correct == 0
           ? {
