@@ -34,7 +34,7 @@ const Game = () => {
         <Layout>
           <Card>
             <Heading
-              mb="20px"
+              mb="10px"
               fontSize={["20px", "20px", "25px"]}
               as="h2"
               color="#2F527B"
