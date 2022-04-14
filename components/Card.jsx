@@ -27,8 +27,8 @@ const Card = ({ children }) => {
         <Image
           position="absolute"
           src="/undraw_adventure_4hum 1.svg"
-          height={[50, 100, 150]}
-          width={[50, 100, 150]}
+          height={150}
+          width={150}
           alt="adventure"
           top="-7rem"
           right="0"
