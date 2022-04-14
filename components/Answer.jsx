@@ -1,8 +1,7 @@
 import {Heading} from '@chakra-ui/react'
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext} from 'react';
 import { gameContext } from './utils/gameContext';
 const Answer = ({answer, cap}) => {
-	const {data, isCorrect, setIsCorrect} = useContext(gameContext);
 	const [correct, setCorrect] = useState(0)
 
 	const handleClick = e => {

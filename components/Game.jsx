@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { gameContext } from "./utils/gameContext";
 const Game = () => {
 	const {data, isLoading, isError} = useData();
-	const [isCorrect, setIsCorrect] = useState(true);
 	if (isLoading)
 		return (<Layout>
 			<Spinner color='red.500' thickness='4px' size='xl'/>
@@ -18,20 +17,23 @@ const Game = () => {
 		</Layout>)
 	if (data)
 	{
+		//should be a state
 		const countries = [];
 		for (let i = 0; i < 4; i++)
 			countries.push(data[Math.floor(Math.random() * (data.length - 1))]);
-		const capital = countries[Math.floor(Math.random() * 3)];		
+		const capital = countries[Math.floor(Math.random() * 3)];	
 		return (
-		<gameContext.Provider value={{capital, countries, data, isCorrect, setIsCorrect}}>
+		<gameContext.Provider value={{}}>
 			<Layout> 
-				{isCorrect && <Card>
+				<Card>
 					<Heading mb="20px" fontSize={["20px", "20px", "25px"]} as="h2" color="#2F527B" fontWeight="700">{capital.capital} is the capital of</Heading>
 					{countries && countries.map((country, index) => <Answer cap={capital.name} key={index} answer={country.name}/>)}
-				</Card>}
+				</Card>
 			</Layout>
 		</gameContext.Provider>
 		)
 	}
+	else
+		return (<Layout />)
 }
 export {Game};
