@@ -18,6 +18,7 @@ const Card = ({ children, onClick }) => {
         Country Quiz
       </Heading>
       <Flex
+        p="2rem"
         flexDirection="column"
         borderRadius="24px"
         backgroundColor="white"

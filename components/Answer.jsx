@@ -1,10 +1,8 @@
 import { Heading } from "@chakra-ui/react";
-import { useState, useContext } from "react";
-import { gameContext } from "./utils/gameContext";
+import { useState} from "react";
 import {motion} from 'framer-motion'
 const Answer = ({ answer, cap }) => {
   const [correct, setCorrect] = useState(0);
-  const { setChoice } = useContext(gameContext);
   const handleClick = (e) => {
     e.preventDefault();
     if (e.target.innerText === cap) setCorrect(1);
@@ -33,7 +31,7 @@ const Answer = ({ answer, cap }) => {
         backgroundColor: "#F9A826",
         borderColor: "#F9A826",
       } : {}}
-	  whileHover={{scale: 1.1}}
+	  whileHover={correct == 0 ? {scale: 1.1} : {}}
       fontSize="xl"
       backgroundColor={
         correct == 0 ? "#ffffff" : correct == 1 ? "#60BF88" : "#EA8282"

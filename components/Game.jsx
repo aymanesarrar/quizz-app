@@ -28,8 +28,8 @@ const Game = () => {
     for (let i = 0; i < 4; i++)
       countries.push(data[Math.floor(Math.random() * (data.length - 1))]);
     const capital = countries[Math.floor(Math.random() * 3)];
+	console.log(capital);
     return (
-      <gameContext.Provider value={{}}>
         <Layout>
           <Card onClick={() => setTimeout(() => {
 			  setChoice(!choice);
@@ -49,7 +49,6 @@ const Game = () => {
               ))}
           </Card>
         </Layout>
-      </gameContext.Provider>
     );
   } else return <Layout />;
 };
