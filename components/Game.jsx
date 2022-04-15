@@ -1,5 +1,5 @@
 import Layout from "./Layout";
-import { Heading, Spinner } from "@chakra-ui/react";
+import { Heading, Spinner, Image } from "@chakra-ui/react";
 import { useData } from "./utils/useData";
 import { Card } from "./Card";
 import { Answer } from "./Answer";
@@ -28,12 +28,16 @@ const Game = () => {
     for (let i = 0; i < 4; i++)
       countries.push(data[Math.floor(Math.random() * (data.length - 1))]);
     const capital = countries[Math.floor(Math.random() * 3)];
-	console.log(capital);
     return (
-        <Layout>
-          <Card onClick={() => setTimeout(() => {
-			  setChoice(!choice);
-		  }, 1000)}>
+      <Layout>
+        <Card
+          onClick={() =>
+            setTimeout(() => {
+              setChoice(!choice);
+            }, 1000)
+          }
+        >
+          {capital.capital ? (
             <Heading
               mb="2rem"
               fontSize={["20px", "20px", "25px"]}
@@ -43,12 +47,23 @@ const Game = () => {
             >
               {capital.capital} is the capital of
             </Heading>
-            {countries.length !== 0 &&
-              countries.map((country, index) => (
-                <Answer cap={capital.name} key={index} answer={country.name} />
-              ))}
-          </Card>
-        </Layout>
+          ) : (
+            <Heading
+              mb="2rem"
+              fontSize={["20px", "20px", "25px"]}
+              as="h2"
+              color="#2F527B"
+              fontWeight="700"
+            >
+              <Image src={capital.flag} alt="country" width={150} height={100}/> is the flag of
+            </Heading>
+          )}
+          {countries.length !== 0 &&
+            countries.map((country, index) => (
+              <Answer cap={capital.name} key={index} answer={country.name} />
+            ))}
+        </Card>
+      </Layout>
     );
   } else return <Layout />;
 };
