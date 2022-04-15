@@ -10,7 +10,7 @@ const Answer = ({ answer, cap }) => {
     if (e.target.innerText === cap) setCorrect(1);
     else setCorrect(2);
     setTimeout(() => {
-      setChoice(false);
+    //   setChoice(false);
       setCorrect(0);
     }, 1000);
   };
@@ -28,11 +28,11 @@ const Answer = ({ answer, cap }) => {
       borderWidth="2px"
       padding="1rem"
       cursor={correct == 0 ? "pointer" : "default"}
-      _hover={{
+      _hover={correct == 0 ? {
         color: "white",
         backgroundColor: "#F9A826",
         borderColor: "#F9A826",
-      }}
+      } : {}}
 	  whileHover={{scale: 1.1}}
       fontSize="xl"
       backgroundColor={

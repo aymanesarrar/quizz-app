@@ -29,9 +29,11 @@ const Game = () => {
       countries.push(data[Math.floor(Math.random() * (data.length - 1))]);
     const capital = countries[Math.floor(Math.random() * 3)];
     return (
-      <gameContext.Provider value={{ setChoice }}>
+      <gameContext.Provider value={{}}>
         <Layout>
-          <Card>
+          <Card onClick={() => setTimeout(() => {
+			  setChoice(!choice);
+		  }, 1000)}>
             <Heading
               mb="2rem"
               fontSize={["20px", "20px", "25px"]}

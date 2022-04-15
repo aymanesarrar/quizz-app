@@ -2,7 +2,8 @@ import { Flex, Heading, Center } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { useState } from "react";
 import { Answer } from "./Answer";
-const Card = ({ children }) => {
+import { motion } from "framer-motion";
+const Card = ({ children, onClick }) => {
   return (
     <Flex flexDirection="column" w="100%">
       <Heading
@@ -17,17 +18,17 @@ const Card = ({ children }) => {
         Country Quiz
       </Heading>
       <Flex
-	  flexDirection="column"
+        flexDirection="column"
         borderRadius="24px"
         backgroundColor="white"
         minH="50vh"
         w={["100%", "60%", "40%", "30%"]}
         mx="auto"
         position="relative"
-		alignItems="center"
+        alignItems="center"
+        onClick={onClick}
       >
         <Image
-          
           src="/undraw_adventure_4hum 1.svg"
           height={150}
           width={150}
