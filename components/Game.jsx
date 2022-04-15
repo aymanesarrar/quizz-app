@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { gameContext } from "./utils/gameContext";
 import { useSWRConfig } from "swr";
 const Game = () => {
-  const { data, isLoading, isError} = useData();
+  const { data, isLoading, isError } = useData();
   const [choice, setChoice] = useState(false);
   if (isLoading)
     return (
@@ -23,18 +23,17 @@ const Game = () => {
     );
   if (data) {
     //should be a state
-	if (!choice)
-		setChoice(true);
+    if (!choice) setChoice(true);
     const countries = [];
     for (let i = 0; i < 4; i++)
-    	countries.push(data[Math.floor(Math.random() * (data.length - 1))]);
+      countries.push(data[Math.floor(Math.random() * (data.length - 1))]);
     const capital = countries[Math.floor(Math.random() * 3)];
     return (
-      <gameContext.Provider value={{setChoice}}>
+      <gameContext.Provider value={{ setChoice }}>
         <Layout>
           <Card>
             <Heading
-              mb="10px"
+              mb="2rem"
               fontSize={["20px", "20px", "25px"]}
               as="h2"
               color="#2F527B"

@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/open-sans": "^4.5.8",
     "@fontsource/poppins": "^4.5.5",
-    "framer-motion": "^6.2.9",
+    "framer-motion": "^6.3.0",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",

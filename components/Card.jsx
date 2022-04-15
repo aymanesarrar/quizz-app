@@ -16,16 +16,18 @@ const Card = ({ children }) => {
       >
         Country Quiz
       </Heading>
-      <Center
+      <Flex
+	  flexDirection="column"
         borderRadius="24px"
         backgroundColor="white"
-        minH="60vh"
+        minH="50vh"
         w={["100%", "60%", "40%", "30%"]}
         mx="auto"
         position="relative"
+		alignItems="center"
       >
         <Image
-          position="absolute"
+          
           src="/undraw_adventure_4hum 1.svg"
           height={150}
           width={150}
@@ -36,7 +38,7 @@ const Card = ({ children }) => {
         <Flex flexDirection="column" width="100%" alignItems="center">
           {children}
         </Flex>
-      </Center>
+      </Flex>
     </Flex>
   );
 };
