@@ -3,7 +3,7 @@ import { Image } from "@chakra-ui/react";
 import { useState } from "react";
 import { Answer } from "./Answer";
 import { motion } from "framer-motion";
-const Card = ({ children, onClick }) => {
+const Card = ({ children, onClick, counter }) => {
   return (
     <Flex flexDirection="column" w="100%">
       <Heading
@@ -36,6 +36,7 @@ const Card = ({ children, onClick }) => {
           alt="adventure"
           top="-7rem"
           right="0"
+          display={counter != 10 ? "inline" : "none"}
         />
         <Flex flexDirection="column" width="100%" alignItems="center">
           {children}

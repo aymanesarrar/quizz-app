@@ -1,11 +1,20 @@
 import { Heading } from "@chakra-ui/react";
-import { useState} from "react";
+import { useContext, useState} from "react";
 import {motion} from 'framer-motion'
-const Answer = ({ answer, cap }) => {
+import { gameContext } from "./utils/gameContext";
+const Answer = ({ answer, cap}) => {
   const [correct, setCorrect] = useState(0);
+  const {win, setWin} = useContext(gameContext);
   const handleClick = (e) => {
     e.preventDefault();
-    if (e.target.innerText === cap) setCorrect(1);
+    if (e.target.innerText === cap) {
+      setCorrect(1);
+      setTimeout(() => {
+        win++;
+        setWin(win);
+        setCorrect(0);
+      }, 1000);
+    }
     else setCorrect(2);
     setTimeout(() => {
     //   setChoice(false);
