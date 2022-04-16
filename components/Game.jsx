@@ -32,10 +32,10 @@ const Game = () => {
     const capital = countries[Math.floor(Math.random() * 3)];
     return (
       <Layout>
-        {counter <= 10 ? (
+        {counter != 10 ? (
           <gameContext.Provider value={{ win, setWin }}>
             <Card
-              onClick={counter <= 10 ? () =>
+              onClick={counter != 10 ? () =>
                 setTimeout(() => {
                   setChoice(!choice);
                   setCounter(() => counter++);
