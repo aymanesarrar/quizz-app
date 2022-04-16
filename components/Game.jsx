@@ -35,12 +35,11 @@ const Game = () => {
         {counter != 10 ? (
           <gameContext.Provider value={{ win, setWin }}>
             <Card
-              onClick={() =>
+              onClick={counter != 10 ? () =>
                 setTimeout(() => {
                   setChoice(!choice);
                   setCounter(() => counter++);
-                }, 1000)
-              }
+                }, 1000) : {}}
             >
               {capital.capital ? (
                 <Heading
