@@ -36,7 +36,7 @@ const Card = ({ children, onClick, counter }) => {
           alt="adventure"
           top="-7rem"
           right="0"
-          display={counter != 10 ? "inline" : "none"}
+          display={counter <= 10 ? "inline" : "none"}
         />
         <Flex flexDirection="column" width="100%" alignItems="center">
           {children}
