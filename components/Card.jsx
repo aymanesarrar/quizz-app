@@ -18,12 +18,10 @@ const Card = ({ children, onClick, counter }) => {
         Country Quiz
       </Heading>
       <Flex
-        p="2rem"
         flexDirection="column"
         borderRadius="24px"
         backgroundColor="white"
-        minH="50vh"
-        w={["100%", "60%", "40%", "30%"]}
+        w={["100%", "60%", "40%", "50%"]}
         mx="auto"
         position="relative"
         alignItems="center"
